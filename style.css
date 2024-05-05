@@ -1,17 +1,13 @@
-/* Google fonts import link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
-  .sedan-sc-regular {
-    font-family: "Sedan SC", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
-  
+}
+
+.sedan-sc-regular {
+  font-family: "Sedan SC", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 body {
@@ -44,18 +40,16 @@ body {
   color: #333;
 }
 
-.time span.colon {
-  width: 10px;
-}
-
+.time span.colon,
 .time span.ms-colon,
-.time span.millisecond {
-  color: black;
-}
-
-.time span.ms-colon,
+.time span.millisecond,
 .time span.second {
   color: black;
+}
+
+.time span.colon,
+.time span.ms-colon {
+  width: 10px;
 }
 
 .wrapper .buttons {
@@ -65,7 +59,7 @@ body {
 
 .buttons button,
 .button {
-  padding: 13px 20px; /* Updated padding for default button */
+  padding: 13px 20px;
   outline: none;
   border: 1px solid black;
   margin: 0 5px;
@@ -104,7 +98,7 @@ body {
 @media (min-width: 768px) {
   .buttons button,
   .button-52 {
-    padding: 13px 50px 13px; /* Updated padding for larger screens */
+    padding: 13px 50px 13px;
   }
 }
 

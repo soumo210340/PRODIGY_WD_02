@@ -1,0 +1,138 @@
+/* Google fonts import link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper {
+  user-select: none;
+}
+
+.wrapper .time {
+  height: 100px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.09);
+  padding: 0 10px;
+}
+
+.wrapper .time span {
+  width: 100px;
+  text-align: center;
+  font-size: 50px;
+  font-weight: 500;
+  color: #333;
+}
+
+.time span.colon {
+  width: 10px;
+}
+
+.time span.ms-colon,
+.time span.millisecond {
+  color: black;
+}
+
+.time span.ms-colon,
+.time span.second {
+  color: black;
+}
+
+.wrapper .buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.buttons button,
+.button {
+  padding: 13px 20px; /* Updated padding for default button */
+  outline: none;
+  border: 1px solid black;
+  margin: 0 5px;
+  color: black;
+  background: #fff;
+  font-size: 19px;
+  font-weight: 500;
+  border-radius: 4px;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.buttons button:after,
+.button:after {
+  content: "";
+  background-color: #ffe54c;
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+
+.buttons button:hover:after,
+.button:hover:after {
+  top: 0px;
+  left: 0px;
+}
+
+@media (min-width: 768px) {
+  .buttons button,
+  .button-52 {
+    padding: 13px 50px 13px; /* Updated padding for larger screens */
+  }
+}
+
+.background-clip {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .background-clip {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .background-clip {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .background-clip {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (max-aspect-ratio: 4/3) {
+  .background-clip {
+    width: auto;
+    height: auto;
+  }
+}

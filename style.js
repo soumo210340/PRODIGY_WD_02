@@ -57,9 +57,6 @@ function lap() {
     lapList.appendChild(lapItem);
     lapCount++;
 
-    if (lapCount < 4) {
-        stop();
-    }
 }
 
 

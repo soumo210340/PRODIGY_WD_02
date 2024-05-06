@@ -40,7 +40,7 @@ function stop() {
     stopBtn.classList.add("stopActive");
     clearInterval(startTimer);
 }
-
+// for reset 
 function reset() {
     startBtn.classList.remove("active");
     stopBtn.classList.remove("stopActive");

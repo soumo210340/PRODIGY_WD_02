@@ -59,7 +59,6 @@ function lap() {
 
 }
 
-
 function putValue() {
     document.querySelector(".millisecond").innerText = formatTime(ms);
     document.querySelector(".second").innerText = formatTime(sec);

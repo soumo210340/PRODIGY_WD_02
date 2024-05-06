@@ -1,15 +1,17 @@
-
-
-let hr = min = sec = ms = "0" + 0,
-    startTimer;
+let hr = min = sec = ms = 0,
+    startTimer,
+    lapCount = 1;
 
 const startBtn = document.querySelector(".start"),
       stopBtn = document.querySelector(".stop"),
-      resetBtn = document.querySelector(".reset");
+      resetBtn = document.querySelector(".reset"),
+      lapBtn = document.querySelector(".Lap"),
+      lapList = document.querySelector(".lap-list"); // Added lap list reference
 
 startBtn.addEventListener("click", start);
 stopBtn.addEventListener("click", stop);
 resetBtn.addEventListener("click", reset);
+lapBtn.addEventListener("click", lap);
 
 function start() {
     startBtn.classList.add("active");
@@ -17,25 +19,20 @@ function start() {
 
     startTimer = setInterval(() => {
         ms++;
-        ms = ms < 10 ? "0" + ms : ms;
-
-        if (ms == 100) {
+        if (ms === 100) {
             sec++;
-            sec = sec < 10 ? "0" + sec : sec;
-            ms = "0" + 0;
+            ms = 0;
         }
-        if (sec == 60) {
+        if (sec === 60) {
             min++;
-            min = min < 10 ? "0" + min : min;
-            sec = "0" + 0;
+            sec = 0;
         }
-        if (min == 60) {
+        if (min === 60) {
             hr++;
-            hr = hr < 10 ? "0" + hr : hr;
-            min = "0" + 0;
+            min = 0;
         }
         putValue();
-    }, 10); //1000ms = 1s
+    }, 10);
 }
 
 function stop() {
@@ -48,13 +45,31 @@ function reset() {
     startBtn.classList.remove("active");
     stopBtn.classList.remove("stopActive");
     clearInterval(startTimer);
-    hr = min = sec = ms = "0" + 0;
+    hr = min = sec = ms = 0;
+    lapCount = 1;
+    lapList.innerHTML = ""; // Clear lap list
     putValue();
 }
+function lap() {
+    const lapTime = `${formatTime(hr)}:${formatTime(min)}:${formatTime(sec)}:${formatTime(ms)}`;
+    const lapItem = document.createElement("li");
+    lapItem.innerText = `Lap ${lapCount}: ${lapTime}`;
+    lapList.appendChild(lapItem);
+    lapCount++;
+
+    if (lapCount < 4) {
+        stop();
+    }
+}
+
 
 function putValue() {
-    document.querySelector(".millisecond").innerText = ms;
-    document.querySelector(".second").innerText = sec;
-    document.querySelector(".minute").innerText = min;
-    document.querySelector(".hour").innerText = hr;
+    document.querySelector(".millisecond").innerText = formatTime(ms);
+    document.querySelector(".second").innerText = formatTime(sec);
+    document.querySelector(".minute").innerText = formatTime(min);
+    document.querySelector(".hour").innerText = formatTime(hr);
+}
+
+function formatTime(time) {
+    return time < 10 ? "0" + time : time;
 }

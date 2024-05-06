@@ -30,7 +30,31 @@ body {
   border-radius: 6px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.09);
   padding: 0 10px;
+  /* style.css */
+.lap-list {
+  list-style-type: none;
+  padding: 0;
 }
+
+.lap-list li {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
+}
+/* style.css */
+.lap-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.lap-list li {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #333;
+}
+
 
 .wrapper .time span {
   width: 100px;

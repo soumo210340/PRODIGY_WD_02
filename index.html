@@ -1,36 +1,40 @@
 <!DOCTYPE html>
-
 <html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8">
-  <title>Stopwatch Timer application </title>
+  <title>Stopwatch Timer application</title>
   <link rel="stylesheet" href="style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sedan+SC&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Sedan+SC&display=swap" rel="stylesheet">
 </head>
 <body>
   
-     <div class="container">
-      <video autoplay loop muted plays-inline class="background-clip">
-        <source src="video/clock2.mp4" type="video/mp4">
+  <div class="container">
+    <video autoplay loop muted plays-inline class="background-clip">
+      <source src="video/clock2.mp4" type="video/mp4">
     </video>
-     <div class="wrapper">
-     <div class="time">
-       <span class="hour">00</span>
-       <span class="colon">:</span>
-       <span class="minute">00</span>
-       <span class="colon">:</span>
-       <span class="second">00</span>
-       <span class="colon ms-colon">:</span>
-       <span class="millisecond">00</span>
-     </div>
-     <div class="buttons">
-       <button class="start">START</button>
-       <button class="stop">STOP</button>
-       <button class="reset">RESET</button>
-     </div>
+    <div class="wrapper">
+      <div class="time">
+        <span class="hour">00</span>
+        <span class="colon">:</span>
+        <span class="minute">00</span>
+        <span class="colon">:</span>
+        <span class="second">00</span>
+        <span class="colon ms-colon">:</span>
+        <span class="millisecond">00</span>
+        <ul class="lap-list"></ul>
+      </div>
+      <div class="buttons">
+        <button class="start">START</button>
+        <button class="stop">STOP</button>
+        <button class="reset">RESET</button>
+        <button class="Lap">LAP</button>
+      </div>
+      <!-- Add lap list here -->
+      
     </div>
-    <script src="style.js"></script>
+  </div>
+  <script src="style.js"></script>
 </body>
 </html>
